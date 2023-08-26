@@ -1,0 +1,25 @@
+/*The :root pseudo-class represents the root element of the document, which is typically the <html> element.*/
+
+:root {
+  /*text-rendering: Specifies how text should be rendered by the browser. In this case, it is set to "optimizeLegibility", which aims to optimize the legibility of text.*/
+  text-rendering: optimizeLegibility;
+
+  /* -webkit-font-smoothing and -moz-osx-font-smoothing: These properties control the font smoothing behavior for text rendered in WebKit-based browsers (like Safari) and Gecko-based browsers (like Firefox) respectively. In this case, they are both set to "antialiased" and "grayscale" respectively, which improve the smoothness of fonts on screens.*/
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: rgb(12, 12, 12);
+  color: white;
+}
+
+.gold {
+  color: gold;
+}
+
+h2 {
+  color: gold;
+}
