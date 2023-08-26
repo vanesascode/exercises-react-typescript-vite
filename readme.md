@@ -1,8 +1,10 @@
 # VITE REACT TYPESCRIPT COURSE
 
-I am following [Dave Gray]https://github.com/gitdagray's course: https://www.youtube.com/watch?v=xTVQZ46wc28&list=PL0Zuz27SZ-6NS8GXt5nPrcYpust89zq_b&index=12
+I am following [Dave Gray](https://github.com/gitdagray)'s [course:](https://www.youtube.com/watch?v=xTVQZ46wc28&list=PL0Zuz27SZ-6NS8GXt5nPrcYpust89zq_b&index=12)
 
 ![Captura](https://github.com/vanesascode/vanesascode/assets/131259155/08776370-9a6d-456f-b1f0-ab1683214852)
+
+### Try the results [HERE](https://exercices-react-typescript-vite.vercel.app/)
 
 ## 🌟VITE
 
@@ -71,7 +73,7 @@ export default Heading;
 
 ```
 
-### ReactElement:
+### 🔹 ReactElement:
 
 So, as seen before, we are importing the ReactElement type from the "react" module.
 
@@ -130,7 +132,7 @@ export const Section = ({
 
 ---
 
-### ReactNode
+### 🔹 ReactNode
 
 In React, ReactNode is a type that represents the possible types of `children` that a React component can have. It is a union type that can include various types such as:
 
@@ -145,7 +147,7 @@ In other words, ReactNode is a type that encompasses all possible types of child
 
 ---
 
-### useState type
+### 🔹 useState type
 
 ```
 const [count, setCount] = useState<number>(1);
@@ -156,7 +158,7 @@ The generic type argument <number> is provided to specify the type of the state 
 
 ---
 
-### use of 'prev'
+### 🔹 use of 'prev'
 
 ```
 <button onClick={() => setCount((prev) => prev + 1)}>+</button>
@@ -167,7 +169,7 @@ The purpose of the prev parameter is to hold the previous value of the state. In
 
 ---
 
-### generics
+### 🔹 Generics
 
 When working with generics <T>, react can have a hard time to recognize them sometimes. So we use this:
 
@@ -187,7 +189,7 @@ or:
 
 # Class 3
 
-### useEffect:
+### 🔹 useEffect:
 
 This:
 
@@ -213,7 +215,7 @@ Users: null
 
 With react 18 there's a change that is when you use strict mode, which only applies to when you're in development mode, `it mounts the component, then it unmounts it and then it remounts it again` so you're going to see this mounting behavior twice here.
 
-### useMemo
+### 🔹 useMemo
 
 One of the uses is to optimize the performance of a React functional component by memoizing the result of a function call. It is typically used when a function call is expensive and its result does not change frequently.
 
@@ -225,7 +227,7 @@ See an example in the `DoubleNumber.tsx` component of this app.
 
 Another important use is related to referential equality:
 
-### Referential equality
+### 🔹 Referential equality
 
 When referring to "referential equality," it is related to `comparing two objects or values to determine if they are the exact same instance in memory`. In other words, it checks if two variables or references point to the same memory address.
 
@@ -237,11 +239,11 @@ In React, when using hooks like `useMemo` or `useCallback` , referential equalit
 
 By memoizing the result of a computation or a function, React can avoid unnecessary re-execution of that computation if the dependencies have not changed, based on referential equality checks. This can help improve the performance of React components by preventing unnecessary re-renders.
 
-### memoization
+### 🔹 Memoization
 
 To memoize means to cache or store the result of a function call or the value of an expression so that it can be reused later without having to recompute it. This technique can improve performance by avoiding redundant calculations or expensive operations.
 
-### useCallback (vs useMemo)
+### 🔹 useCallback (vs useMemo)
 
 The useMemo and useCallback hooks in React are similar in that they both optimize the performance of your components by memoizing values. However:
 
@@ -265,7 +267,7 @@ The useMemo and useCallback hooks in React are similar in that they both optimiz
 
 ```
 
-### React.memo
+### 🔹 React.memo
 
 ```
 export default React.memo(DoubleNumber);
@@ -277,7 +279,7 @@ It should be used selectively on components that have `expensive renders` and ar
 
 Using React.memo on all components can lead to unnecessary complexity and may not provide any performance benefits. It's best to analyze your component's rendering behavior and use React.memo judiciously where it is necessary.
 
-### Hooks should always be used directly in the body of the component function
+### 🔹 Hooks should always be used directly in the body of the component function
 
 CORRECT:
 
@@ -303,3 +305,32 @@ const Fibonacci = () => {
 
 export default Fibonacci;
 ```
+
+### 🔹 useRef
+
+It is a built-in hook provided by React that allows you to create a `mutable value` that persists across renders of a functional component. It returns a mutable `ref object` whose `current` property can be used to store and access a value.
+
+When the .current property of the ref object is updated, React `does not update the component tree`.
+
+This allows you to store values that `won't trigger re-renders`.
+
+```
+import React, { useRef } from "react";
+
+const MyComponent = () => {
+  const inputRef = useRef();
+
+  const handleClick = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleClick}>Log input value</button>
+    </div>
+  );
+};
+```
+
+Have a look at the `RenderedWord.tsx` component for an example.

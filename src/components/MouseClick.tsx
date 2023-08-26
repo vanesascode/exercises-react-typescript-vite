@@ -10,20 +10,18 @@ const MouseClick = () => {
     setMousePosition({ x: event.clientX, y: event.clientY });
   };
 
-  // const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-  //   console.log("Button clicked!");
-  //   console.log("Mouse position:", e.clientX, e.clientY);
-  // };
-
   return (
     <div className="fs-2">
       {mousePosition && (
-        <p>
-          Mouse position:{" "}
-          <span className="text-danger">
-            {mousePosition.x}, {mousePosition.y}
-          </span>
-        </p>
+        <div>
+          <p>Button clicked!</p>
+          <p>
+            Mouse position:{" "}
+            <span className="text-danger">
+              {mousePosition.x}, {mousePosition.y}
+            </span>
+          </p>
+        </div>
       )}
 
       <button onClick={handleClick} className="btn btn-danger btn-lg">

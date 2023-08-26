@@ -13,15 +13,15 @@ const Counter = ({ setCount, children }: CounterProps) => {
       <h4>{children}</h4>
       <button
         onClick={() => setCount((prev) => prev + 1)}
-        className="btn btn-danger mx-2"
+        className="btn btn-danger btn-lg mx-2 fs-4"
       >
         +
       </button>
       <button
         onClick={() => setCount((prev) => prev - 1)}
-        className="btn btn-danger mx-2"
+        className="btn btn-danger btn-lg mx-2 fs-4"
       >
-        -
+        -<span className="text-danger">.</span>
       </button>
     </>
   );

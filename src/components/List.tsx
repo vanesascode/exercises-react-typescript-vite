@@ -7,13 +7,13 @@ interface ListProps<T> {
 
 const List = <T,>({ items, render }: ListProps<T>) => {
   return (
-    <ul>
+    <div>
       {items.map((item, i) => (
-        <li key={i} className="list-unstyled ">
+        <p key={i} className="text-danger fs-2">
           {render(item)}
-        </li>
+        </p>
       ))}
-    </ul>
+    </div>
   );
 };
 
