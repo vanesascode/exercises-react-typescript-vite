@@ -9,6 +9,7 @@ import MouseClick from "./components/MouseClick";
 import Fibonacci from "./components/Fibonacci";
 import AgeSalary from "./components/AgeSalary";
 import RenderedWord from "./components/RenderedWord";
+import CounterTwo from "./components/CounterTwo";
 
 function App() {
   // Use states => setStates that are passed down from the components:
@@ -120,6 +121,7 @@ function App() {
         <br />
         <br />
 
+        {/* RENDEREDWORD */}
         <div className=" my-5">
           <h2>
             Rendering a word and displaying of the number of times the component
@@ -127,6 +129,18 @@ function App() {
             has been rendered thanks to useRef and useEffect
           </h2>
           <RenderedWord />
+        </div>
+        <br />
+        <br />
+
+        {/* COUNTERTWO */}
+        <div className=" my-5">
+          <h2>
+            Rendering a count * 2, using children as a function
+            <br />
+            (useState too)
+          </h2>
+          <CounterTwo>{(num: number) => <>Current Count: {num}</>}</CounterTwo>
         </div>
         <br />
         <br />

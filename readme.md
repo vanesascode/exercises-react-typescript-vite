@@ -73,6 +73,8 @@ export default Heading;
 
 ```
 
+---
+
 ### 🔹 ReactElement:
 
 So, as seen before, we are importing the ReactElement type from the "react" module.
@@ -215,6 +217,8 @@ Users: null
 
 With react 18 there's a change that is when you use strict mode, which only applies to when you're in development mode, `it mounts the component, then it unmounts it and then it remounts it again` so you're going to see this mounting behavior twice here.
 
+---
+
 ### 🔹 useMemo
 
 One of the uses is to optimize the performance of a React functional component by memoizing the result of a function call. It is typically used when a function call is expensive and its result does not change frequently.
@@ -239,9 +243,13 @@ In React, when using hooks like `useMemo` or `useCallback` , referential equalit
 
 By memoizing the result of a computation or a function, React can avoid unnecessary re-execution of that computation if the dependencies have not changed, based on referential equality checks. This can help improve the performance of React components by preventing unnecessary re-renders.
 
+---
+
 ### 🔹 Memoization
 
 To memoize means to cache or store the result of a function call or the value of an expression so that it can be reused later without having to recompute it. This technique can improve performance by avoiding redundant calculations or expensive operations.
+
+---
 
 ### 🔹 useCallback (vs useMemo)
 
@@ -267,6 +275,8 @@ The useMemo and useCallback hooks in React are similar in that they both optimiz
 
 ```
 
+---
+
 ### 🔹 React.memo
 
 ```
@@ -278,6 +288,8 @@ Using React.memo all the time is not advisable. React.memo is a higher-order com
 It should be used selectively on components that have `expensive renders` and are `not likely to change` their props frequently.
 
 Using React.memo on all components can lead to unnecessary complexity and may not provide any performance benefits. It's best to analyze your component's rendering behavior and use React.memo judiciously where it is necessary.
+
+---
 
 ### 🔹 Hooks should always be used directly in the body of the component function
 
@@ -305,6 +317,8 @@ const Fibonacci = () => {
 
 export default Fibonacci;
 ```
+
+---
 
 ### 🔹 useRef
 
@@ -334,3 +348,60 @@ const MyComponent = () => {
 ```
 
 Have a look at the `RenderedWord.tsx` component for an example.
+
+---
+
+### 🔹 useReducer
+
+useReducer is a built-in hook in React that allows you to manage `complex state logic` in your components. It is an alternative to using the useState hook when you need to handle state updates that depend on the previous state or involve multiple related values.
+
+```
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+- `state`: The current state value.
+- `dispatch`: A function that allows you to dispatch actions to update the state.
+- `reducer`: A function that specifies how the state should be updated based on the dispatched action. It takes the current state and the action as arguments and returns the new state.
+- `initialState`: The initial value of the state.
+
+E.g.: 
+
+```
+
+import React, { useReducer } from "react";
+
+// Reducer function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+};
+
+// Component using useReducer
+const Counter = () => {
+  const initialState = { count: 0 };
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const increment = () => {
+    dispatch({ type: "INCREMENT" });
+  };
+
+  const decrement = () => {
+    dispatch({ type: "DECREMENT" });
+  };
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+};
+
+```
