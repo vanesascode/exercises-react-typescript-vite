@@ -124,7 +124,7 @@ function App() {
         {/* RENDEREDWORD */}
         <div className=" my-5">
           <h2>
-            Rendering a word and displaying of the number of times the component
+            Rendering keys and displaying of the number of times the component
             <br />
             has been rendered thanks to useRef and useEffect
           </h2>
