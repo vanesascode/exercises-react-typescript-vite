@@ -10,6 +10,7 @@ import Fibonacci from "./components/Fibonacci";
 import AgeSalary from "./components/AgeSalary";
 import RenderedWord from "./components/RenderedWord";
 import CounterTwo from "./components/CounterTwo";
+import CounterUseReducer from "./components/CounterUseReducer";
 
 function App() {
   // Use states => setStates that are passed down from the components:
@@ -136,11 +137,23 @@ function App() {
         {/* COUNTERTWO */}
         <div className=" my-5">
           <h2>
-            Rendering a count * 2, using children as a function
-            <br />
-            (useState too)
+            Rendering a count * 2, using useState and children as a function
           </h2>
           <CounterTwo>{(num: number) => <>Current Count: {num}</>}</CounterTwo>
+        </div>
+        <br />
+        <br />
+
+        {/* COUNTERuseREDUCER */}
+        <div className=" my-5">
+          <h2>
+            Rendering a count * 3, printing the input below,
+            <br />
+            and changing the color of the text all using useReducer
+          </h2>
+          <CounterUseReducer>
+            {(num: number) => <>Current Count: {num}</>}
+          </CounterUseReducer>
         </div>
         <br />
         <br />

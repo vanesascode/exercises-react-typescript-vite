@@ -7,7 +7,7 @@ type ChildrenType = {
 };
 
 const CounterTwo = ({ children }: ChildrenType) => {
-  const [count, setCount] = useState<number>(1);
+  const [count, setCount] = useState<number>(0);
 
   const increment = () => setCount((prev) => prev + 2);
   const decrement = () => setCount((prev) => prev - 2);

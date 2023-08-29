@@ -405,3 +405,23 @@ const Counter = () => {
 };
 
 ```
+
+---
+
+### 🔹 Nullish coalescing operator (??)
+
+It is a logical operator in JavaScript that provides a way to provide a default value when dealing with nullish values (null or undefined):
+
+```
+const result = value ?? defaultValue;
+```
+
+- If value is not null or undefined, the expression value ?? defaultValue evaluates to value. In other words, result will be assigned the value of value.
+
+- If value is null or undefined, the expression value ?? defaultValue evaluates to defaultValue. In other words, result will be assigned the value of defaultValue.
+
+👉 The nullish coalescing operator is useful when you want to provide a default value only if the original value is null or undefined.
+
+It differs from the logical OR operator (||) because the nullish coalescing operator only considers nullish values, while the logical OR operator considers falsy values (such as empty strings, 0, false) as well.
+
+---
