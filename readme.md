@@ -4,7 +4,7 @@ I am following [Dave Gray](https://github.com/gitdagray)'s [course:](https://www
 
 ![Captura](https://github.com/vanesascode/vanesascode/assets/131259155/08776370-9a6d-456f-b1f0-ab1683214852)
 
-### Try the results [HERE](https://exercices-react-typescript-vite.vercel.app/)
+### Try the results [HERE](https://exercices-react-typescript-vite-vanesascode.vercel.app/)
 
 ## 🌟VITE
 
@@ -364,7 +364,7 @@ const [state, dispatch] = useReducer(reducer, initialState);
 - `reducer`: A function that specifies how the state should be updated based on the dispatched action. It takes the current state and the action as arguments and returns the new state.
 - `initialState`: The initial value of the state.
 
-E.g.: 
+E.g.:
 
 ```
 
